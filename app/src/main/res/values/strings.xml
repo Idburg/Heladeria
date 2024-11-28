@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Heladeria</string>
+    <string name="qu_helado_quieres">¿Qué helado quieres?</string>
+    <string name="vainilla">Vainilla:</string>
 </resources>
