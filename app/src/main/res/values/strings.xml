@@ -2,4 +2,8 @@
     <string name="app_name">Heladeria</string>
     <string name="qu_helado_quieres">¿Qué helado quieres?</string>
     <string name="vainilla">Vainilla:</string>
+    <string name="fresa">Fresa:</string>
+    <string name="chocolate">Chocolate:</string>
+    <string name="generar">Generar</string>
+    <string name="finalizar">Finalizar</string>
 </resources>
