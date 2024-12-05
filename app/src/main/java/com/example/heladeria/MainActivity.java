@@ -20,10 +20,12 @@ public class MainActivity extends AppCompatActivity {
     private EditText e1,e2,e3;
     private Spinner sp;
     private String vainillas, fresas, chocos, spinnerData, spinnerColor;
+    private Bundle datosHelado = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     chocos += "O";
                 }
             }
-
+            /*
             Intent intent = new Intent(this, Activity2.class);
             intent.putExtra("dataVainilla", vainillas);
             intent.putExtra("dataFresa",fresas);
@@ -77,8 +79,24 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("spinnerData",spinnerData);
             intent.putExtra("spinnerColor",spinnerColor);
             startActivity(intent);
+            */
 
+            datosHelado.putString("dataVainilla", vainillas);
+            datosHelado.putString("dataFresa",fresas);
+            datosHelado.putString("dataChocolate",chocos);
+            datosHelado.putString("spinnerData",spinnerData);
+            datosHelado.putString("spinnerColor",spinnerColor);
+
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(true)
+                        .add(R.id.data_transfer, FragmentData.class, datosHelado)
+                        .commit();
+
+            }
         });
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
