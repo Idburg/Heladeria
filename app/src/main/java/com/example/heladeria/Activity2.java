@@ -27,6 +27,7 @@ public class Activity2 extends AppCompatActivity {
         chocolate = findViewById(R.id.result_chocolate);
         tipo = findViewById(R.id.result_tipo);
 
+        /*
         Intent intent = getIntent();
 
         String resultV = intent.getStringExtra("dataVainilla");
@@ -45,7 +46,7 @@ public class Activity2 extends AppCompatActivity {
         String resultColor = intent.getStringExtra("spinnerColor");
         tipo.setText(resultSpinner);
         tipo.setTextColor(Color.parseColor(resultColor));
-
+        */
         end = findViewById(R.id.end);
         end.setOnClickListener(view -> Activity2.this.finish());
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "185195161779",
+    "project_id": "heladeria-31fdf",
+    "storage_bucket": "heladeria-31fdf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185195161779:android:7c4029bafe2a71940ba8c6",
+        "android_client_info": {
+          "package_name": "com.example.heladeria"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzMewX12pvYXFgn8qmvgnsNglhZpeS1Hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
