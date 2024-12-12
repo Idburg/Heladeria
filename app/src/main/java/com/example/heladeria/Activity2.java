@@ -46,10 +46,10 @@ public class Activity2 extends AppCompatActivity {
         String resultColor = intent.getStringExtra("spinnerColor");
         tipo.setText(resultSpinner);
         tipo.setTextColor(Color.parseColor(resultColor));
-        */
+
         end = findViewById(R.id.end);
         end.setOnClickListener(view -> Activity2.this.finish());
-
+        */
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
