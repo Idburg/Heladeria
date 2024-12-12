@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentContainerView;
+import androidx.fragment.app.FragmentManager;
 
 public class MainActivity extends AppCompatActivity {
     private Button generar;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner sp;
     private String vainillas, fresas, chocos, spinnerData, spinnerColor;
     private Bundle datosHelado = new Bundle();
+    private FragmentContainerView fragmento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        fragmento = findViewById(R.id.data_transfer);
         e1 = findViewById(R.id.v_number);
         e2 = findViewById(R.id.f_number);
         e3 = findViewById(R.id.c_number);
@@ -87,13 +91,16 @@ public class MainActivity extends AppCompatActivity {
             datosHelado.putString("spinnerData",spinnerData);
             datosHelado.putString("spinnerColor",spinnerColor);
 
-            if (savedInstanceState == null) {
-                getSupportFragmentManager().beginTransaction()
-                        .setReorderingAllowed(true)
-                        .add(R.id.data_transfer, FragmentData.class, datosHelado)
-                        .commit();
 
-            }
+            FragmentManager fm = getSupportFragmentManager();
+            fm.beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(R.id.data_transfer, FragmentData.class, datosHelado)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+
+
         });
 
 
