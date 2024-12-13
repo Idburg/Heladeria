@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner sp;
     private String vainillas, fresas, chocos, spinnerData, spinnerColor;
     private Bundle datosHelado = new Bundle();
-    private FragmentContainerView fragmento;
+    private int numHelados = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        fragmento = findViewById(R.id.data_transfer);
         e1 = findViewById(R.id.v_number);
         e2 = findViewById(R.id.f_number);
         e3 = findViewById(R.id.c_number);
@@ -95,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             FragmentManager fm = getSupportFragmentManager();
             fm.beginTransaction()
                     .setReorderingAllowed(true)
-                    .add(R.id.data_transfer, FragmentData.class, datosHelado)
+                    .add(R.id.data_transfer, FragmentData.class, datosHelado, "Helado_"+numHelados)
                     .setReorderingAllowed(true)
                     .addToBackStack(null)
                     .commit();
