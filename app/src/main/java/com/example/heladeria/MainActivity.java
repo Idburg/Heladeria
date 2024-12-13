@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         e3 = findViewById(R.id.c_number);
         generar = findViewById(R.id.generar);
         generar.setOnClickListener(view -> {
+            numHelados++;
             vainillas = "";
             fresas = "";
             chocos = "";
