@@ -92,9 +92,12 @@ public class MainActivity extends AppCompatActivity {
 
 
             FragmentManager fm = getSupportFragmentManager();
+            //FragmentData fragmento = new FragmentData();
+            //fragmento.setArguments(datosHelado);
             fm.beginTransaction()
                     .setReorderingAllowed(true)
                     .add(R.id.data_transfer, FragmentData.class, datosHelado, "Helado_"+numHelados)
+                    // .add(R.id.data_transfer, fragmento, "Helado_"+numHelados
                     .setReorderingAllowed(true)
                     .addToBackStack(null)
                     .commit();
