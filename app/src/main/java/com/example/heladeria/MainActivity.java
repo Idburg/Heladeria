@@ -1,6 +1,7 @@
 package com.example.heladeria;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -103,7 +105,13 @@ public class MainActivity extends AppCompatActivity {
                     .addToBackStack(null)
                     .commit();
 
-
+            if (numHelados >= 4) {
+                generar.setOnClickListener(null);
+                generar.setVisibility(View.INVISIBLE);
+                TextView title = findViewById(R.id.title);
+                title.setText("Máximo alcanzado");
+                title.setTextColor(Color.parseColor("#FF0000"));
+            }
         });
 
 
